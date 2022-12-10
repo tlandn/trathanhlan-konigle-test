@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+class Email(models.Model):
+  email = models.EmailField()
+  created_at = models.DateTimeField(auto_now_add=True)
+  verified_at = models.DateTimeField(null=True)
+  unsubscribed_at = models.DateTimeField(null=True)
