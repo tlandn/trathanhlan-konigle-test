@@ -3,8 +3,11 @@ from datetime import date
 from celery import shared_task
 from django.core.mail import send_mail
 
-from .helpers.email_utils import get_emails_all, get_emails_new, get_emails_unsubcribed
+from unity_project.helpers.email_utils import get_emails_all, get_emails_new, get_emails_unsubcribed
 
+@shared_task
+def add(x, y):
+    return x + y
 
 @shared_task
 def send_statistics_email():
@@ -15,7 +18,7 @@ def send_statistics_email():
 
     subject = f"Your email statistics"
     message = (
-        f"Hi,\n\n"
+        f"Hi,\n"
         f"Here are your email statistics:\n"
         f"Total emails: {emails_subcribed['emails_subscribed_count']}, new email this month: {emails_new['emails_new_count']}, unsubscribed: {emails_unsubcribed['emails_unsubscribed_count']}"
     )
