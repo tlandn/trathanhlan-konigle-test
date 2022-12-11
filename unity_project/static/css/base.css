@@ -1,7 +1,16 @@
 .container {
   max-width: 900px;
   margin: 0 auto;
-  background: lightgray;
+  /* background: lightgray; */
+}
+
+.title {
+  font-size: 12px;
+}
+
+.month_year {
+  margin-top: 12px;
+  margin-bottom: 16px;
 }
 
 .stats {
@@ -11,13 +20,27 @@
 
 .each-stats {
   border: 1px solid black;
+  padding: 10px 12px;
+}
+
+.stat-title {
+  margin-bottom: 12px;
+}
+
+.count {
+  font-size: 24px;
 }
 
 .email-list {
   width: 100%;
+  margin-top: 40px;
 }
 
 table, th, td {  
   border: 1px solid black;
   border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
 }

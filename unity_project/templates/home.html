@@ -1,22 +1,21 @@
 {% extends "base.html" %}
-{% load humanize %}
 {% block content %} 
   <div class="container">
-     Unity
+     <div class="title">UNITY</div>
      <hr/>
-     <div>{{month_year}}</div>
+     <div class="month_year">{{month_year}}</div>
      <div class="stats">
         <div class="each-stats">
-          <div>Email list</div>
-          <div>{{emails_subscribed_count}}</div>
+          <div class="stat-title">Email list</div>
+          <div class="count">{{emails_subscribed_count}}</div>
         </div>
         <div class="each-stats">
-          <div>New this month</div>
-          <div>{{emails_new_count}}</div>
+          <div class="stat-title">New this month</div>
+          <div class="count">{{emails_new_count}}</div>
         </div>
         <div class="each-stats">
-          <div>Unsubsribed</div>
-          <div>{{emails_unsubscribed_count}}</div>
+          <div class="stat-title">Unsubsribed</div>
+          <div class="count">{{emails_unsubscribed_count}}</div>
         </div>
      </div>
      <table class="email-list">
