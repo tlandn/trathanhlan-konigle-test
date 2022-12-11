@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # 3rd party libraries
     "django_extensions",
     "rest_framework",
+    "django_celery_beat",
     # apps
     "unity",
 ]
@@ -131,7 +132,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 CELERY_BROKER_URL = "redis://localhost:6379/0"
-# this allows you to schedule items in the Django admin.
-# CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers.DatabaseScheduler'
+# CELERY_BEAT_SCHEDULE = {
+#     'notify_customers': {
+#         'task': 'playground.tasks.notify_customers',
+#         'schedule': 5,
+#         'args': ['Hello World'],
+#     }
+# }
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

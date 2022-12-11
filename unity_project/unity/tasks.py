@@ -3,11 +3,12 @@ from datetime import date
 from celery import shared_task
 from django.core.mail import send_mail
 
-from unity_project.helpers.email_utils import get_emails_all, get_emails_new, get_emails_unsubcribed
+from unity_project.helpers.email_utils import (
+    get_emails_all,
+    get_emails_new,
+    get_emails_unsubcribed,
+)
 
-@shared_task
-def add(x, y):
-    return x + y
 
 @shared_task
 def send_statistics_email():
