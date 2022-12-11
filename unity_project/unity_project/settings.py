@@ -37,12 +37,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'django.contrib.humanize',
-    
+    "django.contrib.humanize",
     # 3rd party libraries
-    'django_extensions',
-    'rest_framework',   
-
+    "django_extensions",
+    "rest_framework",
     # apps
     "unity",
 ]
@@ -130,3 +128,10 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+CELERY_BROKER_URL = "redis://localhost:6379/0"
+# this allows you to schedule items in the Django admin.
+# CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers.DatabaseScheduler'
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
