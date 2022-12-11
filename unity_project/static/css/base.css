@@ -3,3 +3,21 @@
   margin: 0 auto;
   background: lightgray;
 }
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.each-stats {
+  border: 1px solid black;
+}
+
+.email-list {
+  width: 100%;
+}
+
+table, th, td {  
+  border: 1px solid black;
+  border-collapse: collapse;
+}

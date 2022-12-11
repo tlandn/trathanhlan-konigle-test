@@ -1,13 +1,39 @@
 {% extends "base.html" %}
-
-{% block content %}
+{% load humanize %}
+{% block content %} 
   <div class="container">
-     {{title}}
+     Unity
+     <hr/>
+     <div>{{month_year}}</div>
+     <div class="stats">
+        <div class="each-stats">
+          <div>Email list</div>
+          <div>{{emails_subscribed_count}}</div>
+        </div>
+        <div class="each-stats">
+          <div>New this month</div>
+          <div>{{emails_new_count}}</div>
+        </div>
+        <div class="each-stats">
+          <div>Unsubsribed</div>
+          <div>{{emails_unsubscribed_count}}</div>
+        </div>
+     </div>
+     <table class="email-list">
+      <tr>
+        <th>Email</th>
+        <th>Date</th>
+        <th>Status</th>
+      </tr>
+      {% for email in emails_subscribed %}
+      <tr>
+        <td>{{ email.email }}</td>
+        <td>{{ email.created_at_humanize }}</td>
+        <td>{{ email.status }}</td>
+      </tr>  
+      {% endfor %}    
+    </table>
   </div>
-  {% for post in post_list %}
-  <div class="post-entry">
-    <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
-    <p>{{ post.body }}</p>
-  </div>
-  {% endfor %}
+  
+  
 {% endblock content %}
