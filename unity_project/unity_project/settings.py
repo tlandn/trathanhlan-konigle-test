@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.humanize",
     # 3rd party libraries
     "django_extensions",
+    "corsheaders",
     "rest_framework",
     "django_celery_beat",
     # apps
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -141,3 +143,6 @@ CELERY_BROKER_URL = "redis://localhost:6379/0"
 # }
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+CORS_ALLOW_ALL_ORIGINS = True
+APPEND_SLASH = False
